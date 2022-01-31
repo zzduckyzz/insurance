@@ -1,0 +1,6 @@
+C:\Users\dtngh\Desktop\Project_ASP.NET2\ShoeShopOnline\ShoeShopOnline.Common\bin\Release\ShoeShopOnline.Common.dll
+C:\Users\dtngh\Desktop\Project_ASP.NET2\ShoeShopOnline\ShoeShopOnline.Common\bin\Release\ShoeShopOnline.Common.pdb
+C:\Users\dtngh\Desktop\Project_ASP.NET2\ShoeShopOnline\ShoeShopOnline.Common\obj\Release\ShoeShopOnline.Common.csprojAssemblyReference.cache
+C:\Users\dtngh\Desktop\Project_ASP.NET2\ShoeShopOnline\ShoeShopOnline.Common\obj\Release\ShoeShopOnline.Common.csproj.CoreCompileInputs.cache
+C:\Users\dtngh\Desktop\Project_ASP.NET2\ShoeShopOnline\ShoeShopOnline.Common\obj\Release\ShoeShopOnline.Common.dll
+C:\Users\dtngh\Desktop\Project_ASP.NET2\ShoeShopOnline\ShoeShopOnline.Common\obj\Release\ShoeShopOnline.Common.pdb

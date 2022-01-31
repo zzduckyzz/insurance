@@ -1,0 +1,84 @@
+﻿@model Incerrance.Model.DAL.Registration_Insurance
+@{
+	ViewBag.Title = "Registration Insurance";
+	Layout = "~/Views/Shared/_Layouts.cshtml";
+}
+<div class="content">
+	<div class="section group">
+		<div class="col span_2_of_3">
+			<div class="contact-form">
+				<h2>Registration Insurance Vehicle</h2>
+				@using (Html.BeginForm("ConfirmRegistrationInsurance", "Registration_Insurance", FormMethod.Post))
+				{
+					<input type="hidden" name="InsuranceId" class="form-control" value="@Model.InsurranceId" />
+					<input type="hidden" name="RegistrationInsuranceCode" class="form-control" value="@Model.RegistrationInsuranceCode" />
+					<input type="hidden" name="TotalMoney" class="form-control" value="@Model.TotalMoney" />
+					<input type="hidden" name="RegistrationDate" class="form-control" value="@Model.RegistrationDate" />
+					<input type="hidden" name="ExpirationDate" class="form-control" value="@Model.ExpirationDate" />
+					<input type="hidden" name="FullName" class="form-control" value="@Model.FullName" />
+					<input type="hidden" name="Address" class="form-control" value="@Model.Address" />
+
+					<input type="hidden" name="Phone" class="form-control" value="@Model.Phone" />
+					<input type="hidden" name="Email" class="form-control" value="@Model.Email" />
+					<input type="hidden" name="LicensePlate" class="form-control" value="@Model.LicensePlate" />
+					<input type="hidden" name="VehicleRate" class="form-control" value="@Model.VehicleRate" />
+					<input type="hidden" name="RangeOfVehicle" class="form-control" value="@Model.RangeOfVehicle" />
+					<input type="hidden" name="CMND" class="form-control" value="@Model.CMND" />
+					<div>
+						<span><label>Total Money (VND)</label></span>
+						<span><input type="text" name="TotalMoney" value="@Model.TotalMoney" disabled></span>
+					</div>
+					<div>
+						<span><label>Registration Date</label></span>
+						<span><input type="text" name="RegistrationDate" value="@Model.RegistrationDate" disabled></span>
+					</div>
+					<div>
+						<span><label>Expiration Date</label></span>
+						<span><input type="text" name="ExpirationDate" value="@Model.ExpirationDate" disabled></span>
+					</div>
+					<div>
+						<span><label>Full Name</label></span>
+						<span><input type="text" name="FullName" value="@Model.FullName" disabled></span>
+					</div>
+					<div>
+						<span><label>Address</label></span>
+						<span><input type="text" name="Address" value="@Model.Address" disabled></span>
+					</div>
+					<div>
+						<span><label>Phone</label></span>
+						<span><input type="text" name="Phone" value="@Model.Phone" disabled></span>
+					</div>
+					<div>
+						<span><label>Email</label></span>
+						<span><input type="email" name="Email" value="@Model.Email" disabled></span>
+					</div>
+					<div>
+						<span><label>License Plate</label></span>
+						<span><input type="text" name="LicensePlate" value="@Model.LicensePlate" disabled></span>
+					</div>
+					<div>
+						<span><label>Vehicle Rate</label></span>
+						<span><input type="number" name="VehicleRate" value="@Model.VehicleRate" disabled></span>
+					</div>
+					<div>
+						<span><label>Range Of Vehicle</label></span>
+						<span><input type="text" name="RangeOfVehicle" value="@Model.RangeOfVehicle" disabled></span>
+					</div>
+					<div>
+						<span><label>CMND</label></span>
+						<span><input type="number" name="CMND" value="@Model.CMND" disabled></span>
+					</div>
+					<div>
+						<span><input type="submit" value="Submit" class="myButton"></span>
+					</div>
+
+				}
+			</div>
+		</div>
+		<div class="col span_1_of_3">
+			<div class="contact_info">
+				
+			</div>
+		</div>
+	</div>
+</div>

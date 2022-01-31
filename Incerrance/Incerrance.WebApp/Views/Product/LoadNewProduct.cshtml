@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Incerrance.Model.DAL.Product>
+@if ((int)ViewBag.Count > 0)
+{
+    foreach (var item in Model)
+    {
+        var url = "/chi-tiet-san-pham/" + item.MetaTitle + "/" + item.Id;
+        <div class="col-md-4 abt-shoe-left" style="height: 400px;">
+            <div class="abt-one" style="height: 400px;">
+                <a href="@url"><img src="@item.UrlImage" width="350" height="220" alt="" /></a>
+                <h4><a href="@url">@item.Name</a></h4>
+                <div class="content">
+                    @Html.Raw(item.Description)
+                </div>
+				<a href="@url">See details</a>
+            </div>
+        </div>
+    }
+}
+

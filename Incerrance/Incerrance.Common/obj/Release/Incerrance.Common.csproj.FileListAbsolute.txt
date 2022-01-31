@@ -1,0 +1,6 @@
+F:\Insurrance\Incerrance\Incerrance.Common\bin\Release\Incerrance.Common.dll
+F:\Insurrance\Incerrance\Incerrance.Common\bin\Release\Incerrance.Common.pdb
+F:\Insurrance\Incerrance\Incerrance.Common\obj\Release\Incerrance.Common.csprojAssemblyReference.cache
+F:\Insurrance\Incerrance\Incerrance.Common\obj\Release\Incerrance.Common.csproj.CoreCompileInputs.cache
+F:\Insurrance\Incerrance\Incerrance.Common\obj\Release\Incerrance.Common.dll
+F:\Insurrance\Incerrance\Incerrance.Common\obj\Release\Incerrance.Common.pdb

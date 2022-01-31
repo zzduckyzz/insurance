@@ -1,0 +1,23 @@
+﻿@{
+	ViewBag.Title = "Insurance application status";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="single_grid text-center">
+	<h1>Transaction results</h1>
+	@{
+		var success = (bool)ViewBag.IsSuccess;
+	}
+	@if (success)
+	{
+		<div class="alert alert-success">@ViewBag.Result</div>
+	}
+	else
+	{
+		<div class="alert alert-danger">@ViewBag.Result</div>
+	}
+
+	<div class="clearfix">
+
+	</div>
+</div>

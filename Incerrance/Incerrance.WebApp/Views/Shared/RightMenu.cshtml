@@ -1,0 +1,6 @@
+﻿@model List<Incerrance.Model.DAL.VehicleType>
+
+@foreach (var item in Model)
+{
+	<li><a href="/Homes/DetailVehicleType?Id=@item.Id">@item.Name</a></li>
+}

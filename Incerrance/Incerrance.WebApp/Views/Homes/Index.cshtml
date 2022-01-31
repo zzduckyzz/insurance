@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Incerrance.Model.DAL.Vehicle>
+
+@{
+	ViewBag.Title = "Home";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content">
+	<div class="content_bottom">
+		<div class="heading">
+			<h3>Feature Vehicle</h3>
+		</div>
+		@*<div class="see">
+			<p><a href="#">See all Products</a></p>
+		</div>*@
+		<div class="clear"></div>
+	</div>
+	<div class="section group">
+		@foreach (var item in Model)
+		{
+			<div class="grid_1_of_4 images_1_of_4">
+				<a href="/Homes/DetailVehicle?Id=@item.Id"><img src="@item.ImageVehicle" alt="" height="200px"/></a>
+				<h2>@item.Name </h2>
+				<div class="price-details">
+					<div class="price-number">
+						<p><span class="rupees">Sl: @item.Insurrance.Count</span></p>
+					</div>
+					<div class="add-cart">
+						<h4><a href="/Homes/DetailVehicle?Id=@item.Id">See Detail</a></h4>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		}
+
+	</div>
+</div>

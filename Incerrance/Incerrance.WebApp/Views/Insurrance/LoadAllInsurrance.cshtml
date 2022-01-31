@@ -1,0 +1,41 @@
+﻿@model PagedList.IPagedList<Incerrance.Model.DAL.Insurrance>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+	ViewBag.Title = "All Insurrance";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content">
+	<div class="content_bottom">
+		<div class="heading">
+			<h3>List Incerrance Vehicle</h3>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="section group">
+		@foreach (var item in Model)
+		{
+			<div class="grid_1_of_4 images_1_of_4">
+				<a href="/Homes/DetailIncerranceVehicle?Id=@item.Id"><img src="@item.Vehicle.ImageVehicle" alt="" height="200px" /></a>
+				<h2>@item.Vehicle.Name </h2>
+				<div class="price-details">
+					<div class="price-number">
+						<p><span class="rupees">@item.Price VND</span></p>
+					</div>
+					<div class="add-cart">
+						<h4><a href="Homes/DetailIncerranceVehicle?Id=@item.Id">See Detail</a></h4>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		}
+
+	</div>
+</div>
+
+<div class="text-center col-md-10" style="margin-top: 10px;">
+	<p>Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) on @Model.PageCount</p>
+	@Html.PagedListPager(Model, page => Url.Action("LoadAllProduct", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+</div>
+
+<!--end-single-->

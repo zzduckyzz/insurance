@@ -1,0 +1,78 @@
+﻿@model Incerrance.Model.DAL.User
+
+@{
+	ViewBag.Title = "Update user";
+	Layout = "~/Views/Shared/_Layouts.cshtml";
+}
+
+<div class="content">
+	<div class="section group">
+		<div class="col span_2_of_3">
+			<div class="contact-form">
+				<h2>User Profile</h2>
+				@using (Html.BeginForm("EditProfile", "User", FormMethod.Post))
+				{
+					<div class="col-md-12 account-left">
+
+						@Html.AntiForgeryToken()
+						@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+						@Html.HiddenFor(model => model.Id)
+						@Html.HiddenFor(model => model.GroupId)
+						@Html.HiddenFor(model => model.CreatedOn)
+						@Html.HiddenFor(model => model.CreatedBy)
+
+						<div class="col-md-6">
+							<div class="address">
+								<span><label>User Name</label></span>
+								@Html.TextBoxFor(model => model.UserName, new { @placeholder = "User name", @readonly = "readonly" })
+							</div>
+							<div class="address">
+								<span><label>Password</label></span>
+								@Html.PasswordFor(model => model.Password, new { @placeholder = "Password" })
+							</div>
+							<div class="address">
+								<span><label>ConfirmPassword</label></span>
+								
+								@Html.PasswordFor(model => model.ConfirmPassword, new { @placeholder = "Confirm Password" })
+							</div>
+							<div class="address">
+								<span><label>Address</label></span>
+							
+								@Html.TextBoxFor(model => model.Address, new { @placeholder = "Address" })
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="address">
+								<span><label>Email</label></span>
+								
+								@Html.TextBoxFor(model => model.Email, new { @placeholder = "Email", @readonly = "readonly" })
+							</div>
+							<div class="address">
+								<span><label>FirstName</label></span>
+							
+								@Html.TextBoxFor(model => model.FirstName, new { @placeholder = "First Name" })
+							</div>
+							<div class="address">
+								<span><label>LastName</label></span>
+							
+								@Html.TextBoxFor(model => model.LastName, new { @placeholder = "Last Name" })
+							</div>
+							<div class="address" style="margin-top:50px">
+								<input type="submit" value="Update">
+							</div>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+		<div class="col span_1_of_3">
+			<div class="contact_info">
+				<h3>Find Us Here</h3>
+				<div class="map">
+					<iframe width="100%" height="175" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed"></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#666;text-align:left;font-size:12px">View Larger Map</a></small>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

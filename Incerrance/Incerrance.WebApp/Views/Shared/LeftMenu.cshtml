@@ -1,0 +1,17 @@
+﻿@model List<Incerrance.Model.DAL.VehicleType>
+<div class="header_slide">
+	<div class="header_bottom_left">
+		<div class="categories">
+			<ul>
+				<h3>Categories</h3>
+				@foreach (var item in Model)
+				{
+	<li><a href="/Homes/DetailVehicleType?Id=@item.Id">@item.Name</a></li>}
+			</ul>
+		</div>
+	</div>
+
+	@{ Html.RenderAction("Slide", "Homes");}
+
+	<div class="clear"></div>
+</div>

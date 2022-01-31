@@ -1,0 +1,30 @@
+﻿@model Incerrance.Model.DAL.Registration_Insurance
+
+@{
+	Layout = "~/Views/Shared/_Layouts.cshtml";
+}
+<div class="content">
+	<div class="section group">
+		<h2>My Insurance Vehicle</h2>
+
+		<p>Full Name: @Model.FullName</p>
+		<p>CMND: @Model.CMND</p>
+		<p>Phone: @Model.Phone</p>
+		<p>LicensePlate: @Model.LicensePlate</p>
+		<p>Address: @Model.Address</p>
+		<p>Range Of Vehicle: @Model.RangeOfVehicle</p>
+		<p>Registration Date: @Model.RegistrationDate</p>
+		<p>Vehicle Rate: @Model.VehicleRate</p>
+		<p>Expiration Date: @Model.ExpirationDate</p>
+		<p>Status: @Model.Status</p>
+		<p>TotalMoney: @Model.TotalMoney VND</p>
+		<p>Insurrance Name: @Model.Insurrance.Name</p>
+		<p>Insurrance Price: @Model.Insurrance.Price</p>
+		<p>Vehicle Name: @Model.Insurrance.Vehicle.Name</p>
+		<p>Vehicle Body Number: @Model.Insurrance.Vehicle.VehicleBodyNumber</p>
+		<p>Vehicle Engine Number: @Model.Insurrance.Vehicle.VehicleEngineNumber</p>
+		<p>Vehicle Model: @Model.Insurrance.Vehicle.VehicleModel</p>
+		<p>Vehicle Type: @Model.Insurrance.Vehicle.VehicleType.Name</p>
+
+	</div>
+</div>

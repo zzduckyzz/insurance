@@ -1,0 +1,111 @@
+﻿@model Incerrance.Model.DAL.Insurrance
+
+@{
+	ViewBag.Title = "Update Insurrance";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+	<div class="form-horizontal">
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+		@Html.HiddenFor(model => model.Id)
+		<div class="row">
+			<div class="form-group col-md-4">
+				@Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-6" })
+				<div class="col-md-11">
+					@Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group col-md-4">
+				@Html.LabelFor(model => model.InsurranceCode, htmlAttributes: new { @class = "control-label col-md-6" })
+				<div class="col-md-11">
+					@Html.EditorFor(model => model.InsurranceCode, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.InsurranceCode, "", new { @class = "text-danger" })
+				</div>
+			</div>
+			<div class="form-group col-md-4">
+				@Html.LabelFor(model => model.TimeInsurrance, htmlAttributes: new { @class = "control-label col-md-6" })
+				<div class="col-md-11">
+					@Html.EditorFor(model => model.TimeInsurrance, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.TimeInsurrance, "", new { @class = "text-danger" })
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="form-group col-md-6">
+				@Html.LabelFor(model => model.MetaTitle, htmlAttributes: new { @class = "control-label col-md-6" })
+				<div class="col-md-11">
+					@Html.EditorFor(model => model.MetaTitle, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.MetaTitle, "", new { @class = "text-danger" })
+				</div>
+			</div>
+			<div class="form-group col-md-6">
+				@Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-6" })
+				<div class="col-md-11">
+					@Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="form-group col-md-6">
+				@Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-6" })
+				<div class="col-md-11">
+					@Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+				</div>
+			</div>
+			<div class="form-group col-md-6">
+				@Html.LabelFor(model => model.VehicleId, "Vehicle", htmlAttributes: new { @class = "control-label col-md-6" })
+				<div class="col-md-11">
+					@Html.DropDownList("VehicleId", null, htmlAttributes: new { @class = "form-control" })
+					@Html.ValidationMessageFor(model => model.VehicleId, "", new { @class = "text-danger" })
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="form-group col-md-12">
+				@Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-6" })
+				<div class="col-md-11">
+					@Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
+					@Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+				</div>
+			</div>
+		</div>
+
+
+		@Html.HiddenFor(model => model.IsDeleted)
+		@Html.HiddenFor(model => model.CreatedBy)
+		@Html.HiddenFor(model => model.CreatedOn)
+		<div class="form-group mt-4 text-right">
+			<div class="col-md-offset-2 col-md-11">
+				<button type="submit" class="btn-sm btn-group-sm btn-primary">Update</button>
+			</div>
+		</div>
+	</div>
+}
+
+<div>
+	<a href="/Admin/Insurrances/Index" class="btn btn-secondary"><i class="fas fa-angle-left"></i>Cancer</a>
+</div>
+@section Scripts{
+	<script>
+        $('#btnSelectImage').on('click', function (e) {
+            e.preventDefault();
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (url) {
+                $('#txtImage').val(url);
+            };
+            finder.popup();
+        })
+        CKEDITOR.replace("Description");
+	</script>
+}

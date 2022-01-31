@@ -1,0 +1,95 @@
+﻿@model Incerrance.Model.DAL.Registration_Insurance
+
+@{
+	Layout = null;
+}
+<div class="modal fade" id="MyModal">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Detail Registration Insurance Vehicle</h4>
+			</div>
+			<div class="modal-body">
+				<table class="table table-bordered table-striped">
+					<tr>
+						<th style="width: 140px;">Insurrance Vehicle</th>
+						<td>@Html.DisplayFor(model => model.Insurrance.Name)</td>
+					</tr>
+					<tr>
+						<th style="width: 140px;">Vehicle </th>
+						<td>@Html.DisplayFor(model => model.Insurrance.Vehicle.Name)</td>
+					</tr>
+					<tr>
+						<th style="width: 140px;">Vehicle Type </th>
+						<td>@Html.DisplayFor(model => model.Insurrance.Vehicle.VehicleType.Name)</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.FullName)</th>
+						<td>@Html.DisplayFor(model => model.FullName)</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.RegistrationInsuranceCode)</th>
+						<td>@Html.DisplayFor(model => model.RegistrationInsuranceCode)</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.Address)</th>
+						<td>@Html.DisplayFor(model => model.Address)</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.CMND)</th>
+						<td>@Html.DisplayFor(model => model.CMND)</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.DateOfBirth)</th>
+						<td>@Html.DisplayFor(model => model.DateOfBirth)</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.Email)</th>
+						<td>@Html.DisplayFor(model => model.Email)</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.RegistrationDate)</th>
+						<td>@Html.DisplayFor(model => model.RegistrationDate)</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.ExpirationDate)</th>
+						<td>@Html.DisplayFor(model => model.ExpirationDate)</td>
+					</tr>
+
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.Phone)</th>
+						<td>@Html.DisplayFor(model => model.Phone)</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.ModifiedBy)</th>
+						<td>@Html.DisplayFor(model => model.ModifiedBy)</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.ModifiedOn)</th>
+						<td>@Html.DisplayFor(model => model.ModifiedOn)</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.Status)</th>
+						<td>@Html.Raw(Model.Status)</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.TotalMoney)</th>
+						<td>@Html.Raw(Model.TotalMoney) VNĐ</td>
+					</tr>
+				</table>
+
+			</div>
+			<!-- /.modal-body -->
+			<div class="modal-footer">
+				<div class="form-actions no-color text-center">
+					<a href="/Admin/Registration_Insurance/Edit?id=@Model.Id" class="btn btn-sm btn-group-sm btn-primary"><i class="far fa-edit"></i>Update</a>
+					<button type="button" class="btn btn-sm btn-secondary" style=" border: 0.5px solid #a8a9ad;" data-dismiss="modal">Cancer</button>
+				</div>
+			</div>
+			<!-- /.modal-footer -->
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

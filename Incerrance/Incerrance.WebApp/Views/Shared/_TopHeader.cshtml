@@ -1,0 +1,24 @@
+﻿@{
+	var session = (Incerrance.Common.UserLogin)Session[Incerrance.Common.CommonConstants.USER_SESSION];
+}
+<div class="headertop_desc">
+	<div class="call">
+		<p><span>Need help?</span> call us <span class="number">1-22-3456789</span></span></p>
+	</div>
+	<div class="account_desc">
+		<ul>
+			@if (session == null)
+			{
+				<li><a href="/dang-ky">Register</a></li>
+				<li><a href="/dang-nhap">Login</a></li>
+			}
+			else
+			{
+				<li><a href="@Url.Action("Logout", "User")">Log out</a></li>
+				<li><a href="/ho-so-nguoi-dung?id=@session.UserId">My Account @session.UserName</a></li>
+				<li><a href="/my-insurance">My Insurance</a></li>
+			}
+		</ul>
+	</div>
+	<div class="clear"></div>
+</div>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Incerrance.Model.DAL.Registration_Insurance>
+
+@{
+	ViewBag.Title = "My insurance";
+	Layout = "~/Views/Shared/_Layouts.cshtml";
+	int i = 1;
+}
+<div class="content">
+	<div class="section group">
+		
+		
+				<h2>My Insurance Vehicle</h2>
+				@foreach (var item in Model)
+				{
+					var url = "/insurrance/" + item.Insurrance.MetaTitle + "/" + item.Insurrance.Id;
+					var urlextensioninsurance = "/Registration_Insurance/ExtensionOfInsurance?reginsuranceId=" + item.Id;
+					var urlClaimInsurances = "/ClaimInsurances/Index?registrationInsuranceId=" + item.Id;
+				
+						
+							<div class="grid_1_of_4 images_1_of_4">
+								<a href="/Homes/DetailVehicle?Id=@item.Insurrance.Vehicle.Id"><img src="@item.Insurrance.Vehicle.ImageVehicle" alt="" height="200px" /></a>
+								<h2>@item.Insurrance.Name </h2>
+								<div class="price-details">
+									<div class="price-number">
+										<h4>@item.Insurrance.Name</h4>
+										<h5>Status: @item.Status</h5>
+										<h5> Registration Date: @item.RegistrationDate</h5>
+										<h5>Expiration Date: @item.ExpirationDate</h5>
+										<h5>Total Money: @Convert.ToDecimal(item.TotalMoney).ToString("#,##0") VNĐ</h5>
+										<h5>Insurance Period: @item.Insurrance.TimeInsurrance Month</h5>
+									</div>
+									<div class="add-cart">
+										<br />
+										<h4><a href="@urlClaimInsurances" class="btn btn-group-sm btn-primary text-decoration-none" style="margin-bottom:10px;">Claim Insurance Vehicle Claims</a></h4>
+										<br />
+										<h4><a href="/Homes/DetailIncerranceVeicle?Id=@item.Id" class="btn btn-group-sm btn-primary text-decoration-none">See detail Incerrance Vehicle........... </a></h4>
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+					
+
+			
+				}
+
+				@if (Model.Count() <= 0)
+				{
+					<div class="text-center text-danger">No insurance</div>
+				}
+			</div>
+		</div>
+	</div>
+</div>

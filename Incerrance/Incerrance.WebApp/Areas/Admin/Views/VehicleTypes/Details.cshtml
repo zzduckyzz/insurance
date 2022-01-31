@@ -1,0 +1,57 @@
+﻿@model Incerrance.Model.DAL.VehicleType
+@{
+	Layout = null;
+}
+<div class="modal fade" id="MyModal">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Detail Vehicle Type</h4>
+			</div>
+			<div class="modal-body">
+				<table class="table table-bordered table-striped">
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.Name)</th>
+						<td>@Html.DisplayFor(model => model.Name)</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.MetaTitle)</th>
+						<td>@Html.DisplayFor(model => model.MetaTitle)</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.Description)</th>
+						<td>@Html.DisplayFor(model => model.Description)</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.CreatedBy)</th>
+						<td>@Html.DisplayFor(model => model.CreatedBy)</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.CreatedOn)</th>
+						<td>@Html.DisplayFor(model => model.CreatedOn)</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.ModifiedBy)</th>
+						<td>@Html.DisplayFor(model => model.ModifiedBy)</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.ModifiedOn)</th>
+						<td>@Html.DisplayFor(model => model.ModifiedOn)</td>
+					</tr>
+					<tr>
+						<th>@Html.DisplayNameFor(model => model.IsDeleted)</th>
+						<td>
+							<a href="#" class="btn-primary btn-sm text-decoration-none">@(Model.IsDeleted == true ? "Không hiển thị" : "Hiển thị")</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="modal-footer">
+				<div class="form-actions no-color text-center">
+					<a href="/Admin/VehicleTypes/Edit?id=@Model.Id" class="btn btn-sm btn-group-sm btn-primary"><i class="far fa-edit"></i>Update</a>
+					<button type="button" class="btn btn-sm btn-primary" style=" border: 0.5px solid #a8a9ad;" data-dismiss="modal">Cancer</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
